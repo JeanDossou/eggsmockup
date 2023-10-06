@@ -1,0 +1,47 @@
+<div class="container-fluid px-4">
+  <h1 class="mt-4">Client</h1>
+  <ol class="breadcrumb mb-4">
+      <li class="breadcrumb-item active">#</li>
+  </ol>
+  <div class="row col-md-8">
+    <div class="card">
+       <div class="card-header">
+        Validation
+       </div>
+       <div class="card-body">
+        <div class="alert alert-danger" role="alert">
+          <h4>Code de Validation</h4>
+          <p>Vous avez reçu un code de validation de bon de livraison.</p>
+          <p>Consulter votre messagerie SMS  </p>
+        </div>
+        <form class="row g-3 needs-validation was-validated" novalidate="">
+          <div class="col-md-12">
+            <label class="form-label" for="validationCustom01">Code Validation</label>
+            <input class="form-control" id="validationCustom01" type="number"  required="">
+          </div>
+          <div class="col-md-12">
+            <label class="form-label" for="validationCustom02">Nombre de Plateau livrés</label>
+            <input class="form-control" id="validationCustom02" type="number" required="">
+          </div>
+          <div class="col-md-12">
+            <label class="form-label" for="validationCustom03">Moyen de Payement</label>
+            <select class="form-select" aria-label="Default select example">
+              <option selected>Espèce</option>
+              <option value="1">Chèque</option>
+              <option value="2">Momo</option>
+              <option value="3">Crédit</option>
+            </select>
+          </div>
+          <div class="col-12">
+            <button class="btn btn-primary" type="submit">Save</button>
+          </div>
+        </form>
+
+       </div>
+    </div>
+
+  </div>
+</div>
+
+
+

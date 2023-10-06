@@ -1,0 +1,71 @@
+<div class="container-fluid px-4">
+  <h1 class="mt-4">Client</h1>
+  <ol class="breadcrumb mb-4">
+      <li class="breadcrumb-item active">#</li>
+  </ol>
+  <div class="row">
+    <div class="card mb-4">
+      <div class="card-header">
+          <i class="fas fa-table me-1"></i>
+         Commandes Client
+      </div>
+      <div class="card-body">
+        <table datatable>
+          <thead>
+              <tr>
+
+                  <th>Numero</th>
+                  <th>Produit</th>
+                  <th>Quantite</th>
+                  <th>Etat</th>
+                  <th>Date cmde</th>
+                  <th>Montant</th>
+                  <th>Action</th>
+              </tr>
+          </thead>
+         <tbody>
+          <tr>
+            <td>C0001</td>
+            <td>Pro Plateau </td>
+            <td> 2 </td>
+            <td>
+              <span class="badge bg-primary rounded-pill">En attente</span></td>
+            <td>2011/04/25</td>
+            <td>8000 XOF</td>
+            <td>
+              <button class="btn btn-primary">
+                 <i class="bi bi-trash"></i>
+            </button>
+            </td>
+        </tr>
+        <tr>
+          <td> C0045 </td>
+          <td>Pro Plateau </td>
+          <td> 3 </td>
+          <td>
+            <span class="badge bg-warning rounded-pill">En Cours de Livraison</span></td>
+          <td>2011/04/25</td>
+          <td>12000 XOF</td>
+          <td><button class="btn btn-primary" data-toggle="tooltip" data-placement="left" title="Valider la reception de la livraison" routerLink="/valid-bon" >
+            Valider
+       </button>
+          </td>
+      </tr>
+      <tr>
+        <td>C0070</td>
+        <td>Pro Plateau </td>
+        <td> 4 </td>
+        <td>
+          <span class="badge bg-success rounded-pill">Livrer</span></td>
+        <td>2011/04/25</td>
+        <td>16000 XOF</td>
+        <td>
+        </td>
+    </tr>
+         </tbody>
+      </table>
+      </div>
+    </div>
+  </div>
+</div>
+
