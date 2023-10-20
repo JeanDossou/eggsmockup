@@ -1,9 +1,46 @@
 <div class="container-fluid px-4">
   <h1 class="mt-4">Client</h1>
   <ol class="breadcrumb mb-4">
-      <li class="breadcrumb-item active">#</li>
+      <li class="breadcrumb-item active"></li>
   </ol>
   <div class="row">
+    <div
+        class="modal"
+        tabindex="-1"
+        role="dialog"
+        [ngStyle]="{'display':displayStyle}">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h4 class="modal-title">Infos du Client</h4>
+              </div>
+              <div class="modal-body">
+                <form class="">
+                  <div class="input-group">
+                    <form class="">
+                      <div class="input-group">
+                          <input class="form-control" [(ngModel)]="phoneNumber" name="phone" type="text" placeholder="Téléphone ...." />
+                      </div>
+                  </form>
+                  </div>
+              </form>
+
+              </div>
+              <div class="modal-footer">
+                <button type="button"
+                        class="btn btn-primary"
+                        (click)="saveInfo()">
+                  Save
+                </button>
+                <button type="button" class="btn btn-danger"
+                        (click)="closePopup()">
+                  Close
+                </button>
+              </div>
+            </div>
+            </div>
+      </div>
+
     <div class="card mb-4">
       <div class="card-header">
           <i class="fas fa-table me-1"></i>
@@ -13,32 +50,42 @@
         <table datatable>
           <thead>
               <tr>
-
                   <th>Numero</th>
                   <th>Produit</th>
-                  <th>Quantite</th>
                   <th>Etat</th>
                   <th>Date cmde</th>
-                  <th>Montant</th>
                   <th>Action</th>
               </tr>
           </thead>
          <tbody>
-          <tr>
+          <tr *ngFor="let cmd of cmder">
+            <td>{{cmd.numcmder}}</td>
+            <td>{{cmd.namePrd}}</td>
+            <td [ngSwitch]="cmd.status">
+              <span *ngSwitchCase="1" class="badge bg-primary rounded-pill">En attente</span>
+              <span *ngSwitchCase="2" class="badge bg-warning rounded-pill">En Cours de Livraison</span>
+              <span *ngSwitchCase="3" class="badge bg-success rounded-pill">Livrer</span>
+            </td>
+            <td>{{cmd.date}}</td>
+            <td [ngSwitch]="cmd.status">
+              <a *ngSwitchCase="2" (click)="open(cmd.numcmder)" class="btn btn-primary" data-toggle="tooltip" data-placement="left" title="Valider la reception de la livraison">
+                Livrer
+              </a>
+            </td>
+          </tr>
+          <!-- <tr>
             <td>C0001</td>
-            <td>Pro Plateau </td>
-            <td> 2 </td>
+            <td>Pro Plateau</td>
             <td>
               <span class="badge bg-primary rounded-pill">En attente</span></td>
             <td>2011/04/25</td>
-            <td>8000 XOF</td>
             <td>
               <button class="btn btn-primary">
                  <i class="bi bi-trash"></i>
             </button>
             </td>
-        </tr>
-        <tr>
+        </tr> -->
+        <!-- <tr>
           <td> C0045 </td>
           <td>Pro Plateau </td>
           <td> 3 </td>
@@ -46,12 +93,12 @@
             <span class="badge bg-warning rounded-pill">En Cours de Livraison</span></td>
           <td>2011/04/25</td>
           <td>12000 XOF</td>
-          <td><button class="btn btn-primary" data-toggle="tooltip" data-placement="left" title="Valider la reception de la livraison" routerLink="/valid-bon" >
+          <td><button (click)="sendSms()" class="btn btn-primary" data-toggle="tooltip" data-placement="left" title="Valider la reception de la livraison" routerLink="/valid-bon" >
             Valider
-       </button>
+             </button>
           </td>
-      </tr>
-      <tr>
+      </tr> -->
+      <!-- <tr>
         <td>C0070</td>
         <td>Pro Plateau </td>
         <td> 4 </td>
@@ -61,7 +108,7 @@
         <td>16000 XOF</td>
         <td>
         </td>
-    </tr>
+      </tr> -->
          </tbody>
       </table>
       </div>

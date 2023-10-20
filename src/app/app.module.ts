@@ -20,6 +20,8 @@ import { DetailCommandComponent } from './detail-command/detail-command.componen
 import { ValidationBonComponent } from './validation-bon/validation-bon.component';
 import { PanierComponent } from './panier/panier.component';
 import { CustomerCmdComponent } from './customer-cmd/customer-cmd.component';
+import { SmsService } from './sms.service';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -43,9 +45,9 @@ import { CustomerCmdComponent } from './customer-cmd/customer-cmd.component';
   imports: [
     BrowserModule,
     DataTablesModule,
-    AppRoutingModule
+    AppRoutingModule,FormsModule
   ],
-  providers: [],
+  providers: [SmsService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

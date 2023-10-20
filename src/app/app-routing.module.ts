@@ -10,8 +10,8 @@ import { DetailLivraisonComponent } from './detail-livraison/detail-livraison.co
 import { AddProductComponent } from './add-product/add-product.component';
 import { DoCommandComponent } from './do-command/do-command.component';
 import { PanierComponent } from './panier/panier.component';
-import { CustomerCmdComponent } from './customer-cmd/customer-cmd.component';
 import { ValidationBonComponent } from './validation-bon/validation-bon.component';
+import { CustomerCmdComponent } from './customer-cmd/customer-cmd.component';
 
 const routes: Routes = [
   { path: 'dashboard', component: HomeComponent},
